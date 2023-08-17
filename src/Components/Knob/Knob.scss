@@ -1,0 +1,57 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  margin: 0;
+
+  .temp-range-error {
+    color: red;
+    font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  }
+}
+
+.knob {
+  position: relative;
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  background-color: white;
+  border: 1px solid black;
+  cursor: pointer;
+
+  &:after,
+  &:before {
+    content: "";
+    position: absolute;
+    width: 4px;
+    height: 60%;
+    background-color: black;
+    top: 50%;
+    left: 50%;
+    transform-origin: top center;
+    z-index: -1;
+  }
+
+  &:after {
+    transform: translate(-50%) rotate(40deg);
+  }
+
+  &:before {
+    transform: translate(-50%) rotate(320deg);
+  }
+
+  .target-temp {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 4px;
+    height: 50%;
+    background-color: black;
+    transform-origin: top center;
+    transition: transform 1s ease-in-out;
+    transform: translate(-50%) rotate(40deg);
+  }
+}
