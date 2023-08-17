@@ -1,4 +1,4 @@
-import React, { ChangeEventHandler } from "react";
+import React from "react";
 import { DebouncedFunc, debounce } from "lodash";
 import "./InputControls.scss";
 interface Temp {
@@ -15,7 +15,6 @@ function InputControls(props: Props) {
   const { setTemperatures, temperatures } = props;
   const onChange: DebouncedFunc<any> = debounce(
     (e: { target: { name: string; value: string } }) => {
-      console.log(e.target.value, "e.target.value", typeof e.target.value);
       setTemperatures({
         ...temperatures,
         [e.target.name]: parseInt(e.target.value.length ? e.target.value : "0"),
