@@ -24,7 +24,7 @@ function InputControls(props: Props) {
   );
   return (
     <div className="temp-input-form">
-      <h3>Initalized input fields with default values</h3>
+      <h3>Initialized input fields with default values</h3>
       <label className="minTemperature" htmlFor="minTemperature">
         Minimum temperature:
         <input
